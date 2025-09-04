@@ -193,7 +193,7 @@ with tab1:
                 st.warning(f"⚠️ '{food_text}' not found in database. Use Ask AI tab for help.")
 
     # Optional food summary in this tab
-    if st.checkbox("📊 Show Food Summary & Log (Manual tab)", key="show_summary_manual"):
+    if st.checkbox("📊 Show Food Summary & Log", key="show_summary_manual"):
         if st.session_state.food_log:
             st.subheader("Today's Food Log")
             st.dataframe(pd.DataFrame(st.session_state.food_log), use_container_width=True)
@@ -252,7 +252,7 @@ with tab2:
             st.info("Open the Ask AI tab and upload the same image or paste the food name for AI analysis.")
 
     # Optional food summary in this tab
-    if st.checkbox("📊 Show Food Summary & Log (Image tab)", key="show_summary_image"):
+    if st.checkbox("📊 Show Food Summary & Log", key="show_summary_image"):
         if st.session_state.food_log:
             st.subheader("Today's Food Log")
             st.dataframe(pd.DataFrame(st.session_state.food_log), use_container_width=True)
@@ -345,7 +345,7 @@ For the query: '{query}', provide:
             st.write(answer)
 
     # Optional food summary & log in Ask AI tab
-    if st.checkbox("📊 Show Food Summary & Log (Ask AI tab)", key="show_summary_askai"):
+    if st.checkbox("📊 Show Food Summary & Log", key="show_summary_askai"):
         if st.session_state.food_log:
             st.subheader("Today's Food Log")
             st.dataframe(pd.DataFrame(st.session_state.food_log), use_container_width=True)
@@ -356,3 +356,4 @@ For the query: '{query}', provide:
 # Bottom: Global Food Summary area (optional across app — always hidden unless checkboxes used above)
 # ----------------------------
 st.caption("⚠️ Nutrition values are approximate and may vary depending on serving size (e.g., 100g, 1 piece, 1 cup) and recipe.")
+
